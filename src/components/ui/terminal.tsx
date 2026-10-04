@@ -38,10 +38,7 @@ export default function Terminal() {
 
   return (
     <div
-      className="card-surface p-5 sm:p-6 w-full max-w-lg shadow-2xl shadow-black/80 font-mono text-xs sm:text-[13px] border border-[rgba(255,255,255,0.12)] relative overflow-hidden transition-all duration-300 hover:border-[rgba(55,129,252,0.35)]"
-      style={{
-        boxShadow: '0 20px 40px -15px rgba(0, 0, 0, 0.8), 0 0 24px rgba(25, 81, 252, 0.15)',
-      }}
+      className="glow-tile-surface p-5 sm:p-6 w-full max-w-lg font-mono text-xs sm:text-[13px] relative overflow-hidden transition-all duration-300"
       role="region"
       aria-label="Illustrative security trace simulation"
     >
