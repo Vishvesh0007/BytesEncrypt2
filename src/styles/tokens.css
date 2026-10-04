@@ -1,0 +1,48 @@
+:root {
+  /* Dark ground */
+  --bg: #050505;
+  --bg-raised: #0b0b0a;
+  --surface: #111110;
+  --surface-2: #1a1a18;
+  --line: rgba(255, 255, 255, 0.10);
+  --line-strong: rgba(255, 255, 255, 0.18);
+
+  /* Text on dark */
+  --text: #f5f5f3;
+  --text-muted: #a3a3a0;   /* body secondary, ~7:1 on --bg */
+  --text-dim: #8a8a86;     /* labels, captions; do not go darker */
+
+  /* Paper section (light) */
+  --paper: #f4f4f2;
+  --paper-2: #eaeae7;
+  --ink: #111110;
+  --ink-muted: #5c5c58;
+  --paper-line: rgba(17, 17, 16, 0.12);
+
+  /* Centralized Cobalt-Blue Color System */
+  --cobalt-950: #03195B; /* primary dark cobalt / deep bg glow */
+  --cobalt-800: #0B2CB1; /* deep cobalt / secondary depth */
+  --cobalt-600: #1951FC; /* primary electric blue / primary interactive & accent */
+  --cobalt-500: #3781FC; /* bright blue & sky blue / highlights, active states */
+  --cobalt-100: #CBE9FD; /* soft ice blue / soft highlights, subtle glow */
+
+  /* Accent Mappings */
+  --accent: #CBE9FD;         /* soft ice blue, primary buttons and highlights */
+  --accent-strong: #3781FC;  /* bright blue, status dot, focus ring, active indicators */
+  --accent-primary: #1951FC; /* primary electric blue, interactive accent */
+  --accent-ink: #03195B;     /* dark cobalt text on light ice-blue accent */
+  --accent-glow: rgba(25, 81, 252, 0.18);
+  --accent-glow-strong: rgba(55, 129, 252, 0.28);
+  --accent-border: rgba(55, 129, 252, 0.35);
+
+  /* Severity (sample report only) */
+  --sev-critical: #ff6b5e;
+  --sev-high: #ffa94d;
+  --sev-medium: #f3e45a;
+  --sev-low: #3781FC;
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+}

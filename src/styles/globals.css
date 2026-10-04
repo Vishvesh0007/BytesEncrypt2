@@ -1,0 +1,119 @@
+@import "tailwindcss";
+@import "./tokens.css";
+
+@theme {
+  --color-cobalt-950: #03195B;
+  --color-cobalt-800: #0B2CB1;
+  --color-cobalt-600: #1951FC;
+  --color-cobalt-500: #3781FC;
+  --color-cobalt-100: #CBE9FD;
+}
+
+@layer base {
+  * {
+    border-color: var(--line);
+    outline-color: var(--accent-strong);
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 300;
+    letter-spacing: -0.03em;
+  }
+
+  code, pre, .font-mono, [data-mono] {
+    font-family: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    letter-spacing: 0.08em;
+  }
+}
+
+/* Custom Utilities based on Design Spec */
+.card-surface {
+  background-color: var(--surface);
+  background-image: radial-gradient(120% 80% at 50% 0%, rgba(55, 129, 252, 0.06), transparent 60%);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+}
+
+.card-surface-subtle {
+  background-color: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+}
+
+.mono-eyebrow {
+  font-family: 'Geist Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+}
+
+.mono-caption {
+  font-family: 'Geist Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+}
+
+.hero-headline-gradient {
+  background: linear-gradient(180deg, #ffffff 30%, #666663 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.paper-surface {
+  background-color: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--paper-line);
+  border-radius: var(--radius-lg);
+}
+
+/* 40px hairline grid pattern masked radially with subtle cobalt line tint */
+.grid-bg-fallback {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(55, 129, 252, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(55, 129, 252, 0.05) 1px, transparent 1px);
+  mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
+  -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
+}
+
+.cobalt-gradient {
+  background: linear-gradient(135deg, #03195B 0%, #0B2CB1 35%, #1951FC 70%, #3781FC 100%);
+}
+
+.grid-bg-paper {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(17, 17, 16, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(17, 17, 16, 0.05) 1px, transparent 1px);
+  mask-image: radial-gradient(circle at center, black 50%, transparent 95%);
+  -webkit-mask-image: radial-gradient(circle at center, black 50%, transparent 95%);
+}
+
+/* Accessible focus ring */
+:focus-visible {
+  outline: 2px solid var(--accent-strong) !important;
+  outline-offset: 2px !important;
+}
+
+/* Reduced motion overrides */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
