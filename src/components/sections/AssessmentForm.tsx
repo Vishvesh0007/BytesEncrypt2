@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import BorderGlow from '../ui/border-glow';
+import GlassPillButton from '../ui/glass-pill-button';
 import { CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
 
 interface FormState {
@@ -449,20 +450,21 @@ export default function AssessmentForm() {
 
                   {/* Submit Button */}
                   <div className="pt-4">
-                    <button
+                    <GlassPillButton
                       type="submit"
                       disabled={status === 'loading'}
-                      className="w-full py-4 rounded-full text-sm font-medium bg-[#3781FC] text-white hover:bg-[#CBE9FD] hover:text-[#03195B] transition-all duration-200 shadow-[0_0_20px_rgba(25,81,252,0.35)] hover:shadow-[0_0_28px_rgba(55,129,252,0.45)] active:scale-[0.99] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60 group"
+                      size="lg"
+                      variant="primary"
                     >
                       {status === 'loading' ? (
                         <>
-                          <Loader2 className="w-4 h-4 animate-spin text-white group-hover:text-[#03195B]" />
+                          <Loader2 className="w-4 h-4 animate-spin text-white" />
                           <span>Submitting request...</span>
                         </>
                       ) : (
                         <span>Request an assessment</span>
                       )}
-                    </button>
+                    </GlassPillButton>
                   </div>
 
                   {/* Security reassurance */}

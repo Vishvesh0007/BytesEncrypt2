@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
+import GlassPillButton from './glass-pill-button';
 
 export default function StickyMobileCta() {
   const [visible, setVisible] = useState(false);
@@ -29,14 +30,17 @@ export default function StickyMobileCta() {
 
   return (
     <div className="fixed bottom-4 left-4 right-4 z-40 sm:hidden animate-in slide-in-from-bottom duration-300">
-      <a
+      <GlassPillButton
+        as="a"
         href="#contact"
-        onClick={handleClick}
-        className="w-full py-3.5 px-6 rounded-full text-xs font-mono font-medium tracking-wider bg-[#3781FC] text-white hover:bg-[#CBE9FD] hover:text-[#03195B] shadow-[0_0_20px_rgba(25,81,252,0.35)] flex items-center justify-between border border-[#3781FC]/40 transition-all duration-200 group"
+        onClick={handleClick as unknown as React.MouseEventHandler<HTMLAnchorElement>}
+        size="lg"
+        variant="primary"
+        className="w-full flex items-center justify-between px-6 py-3.5"
       >
-        <span>REQUEST ASSESSMENT</span>
-        <ArrowRight className="w-4 h-4 text-white group-hover:text-[#03195B] transition-colors" />
-      </a>
+        <span className="font-mono text-xs tracking-wider">REQUEST ASSESSMENT</span>
+        <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
+      </GlassPillButton>
     </div>
   );
 }

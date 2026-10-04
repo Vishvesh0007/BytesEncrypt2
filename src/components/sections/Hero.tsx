@@ -1,4 +1,5 @@
 import Terminal from '../ui/terminal';
+import GlassPillButton from '../ui/glass-pill-button';
 import { ArrowRight } from 'lucide-react';
 
 export default function Hero() {
@@ -41,14 +42,16 @@ export default function Hero() {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
-              <a
+              <GlassPillButton
+                as="a"
                 href="#contact"
                 onClick={handleScroll('#contact')}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-sm font-medium bg-[#3781FC] text-white hover:bg-[#CBE9FD] hover:text-[#03195B] transition-all duration-200 shadow-[0_0_20px_rgba(25,81,252,0.35)] hover:shadow-[0_0_28px_rgba(55,129,252,0.45)] hover:scale-[1.01] active:scale-[0.99] focus:outline-none group"
+                size="md"
+                variant="primary"
               >
                 <span>Request an assessment</span>
-                <ArrowRight className="w-4 h-4 text-white group-hover:text-[#03195B] transition-colors" />
-              </a>
+                <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
+              </GlassPillButton>
 
               <a
                 href="#solutions"

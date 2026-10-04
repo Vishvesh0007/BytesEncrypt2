@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Menu, X, Shield, ArrowRight, ChevronDown } from 'lucide-react';
 import { NAV_LINKS, PRIMARY_CTA, NavLink } from '../../data/navigation';
+import GlassPillButton from './glass-pill-button';
 
 export default function ResizableNavbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -290,13 +291,17 @@ export default function ResizableNavbar() {
 
           {/* CTA & Mobile Trigger */}
           <div className="flex items-center gap-3 shrink-0">
-            <a
-              href={PRIMARY_CTA.href}
-              onClick={(e) => handleLinkClick(e, PRIMARY_CTA.href)}
-              className="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-full text-xs md:text-sm font-medium bg-[#3781FC] text-white hover:bg-[#CBE9FD] hover:text-[#03195B] transition-all duration-200 shadow-[0_0_16px_rgba(25,81,252,0.35)] hover:shadow-[0_0_20px_rgba(55,129,252,0.45)] hover:scale-[1.02] active:scale-[0.98]"
-            >
-              {PRIMARY_CTA.label}
-            </a>
+            <div className="hidden sm:block">
+              <GlassPillButton
+                as="a"
+                href={PRIMARY_CTA.href}
+                onClick={(e) => handleLinkClick(e as unknown as React.MouseEvent<HTMLAnchorElement>, PRIMARY_CTA.href)}
+                size="sm"
+                variant="primary"
+              >
+                <span>{PRIMARY_CTA.label}</span>
+              </GlassPillButton>
+            </div>
 
             <button
               type="button"
@@ -381,13 +386,15 @@ export default function ResizableNavbar() {
           </nav>
 
           <div className="pt-4 border-t border-[rgba(255,255,255,0.06)]">
-            <a
+            <GlassPillButton
+              as="a"
               href={PRIMARY_CTA.href}
-              onClick={(e) => handleLinkClick(e, PRIMARY_CTA.href)}
-              className="w-full inline-flex items-center justify-center py-3 rounded-full text-sm font-medium bg-[#3781FC] text-white hover:bg-[#CBE9FD] hover:text-[#03195B] transition-all duration-200 shadow-[0_0_20px_rgba(25,81,252,0.35)]"
+              onClick={(e) => handleLinkClick(e as unknown as React.MouseEvent<HTMLAnchorElement>, PRIMARY_CTA.href)}
+              size="lg"
+              variant="primary"
             >
-              {PRIMARY_CTA.label}
-            </a>
+              <span>{PRIMARY_CTA.label}</span>
+            </GlassPillButton>
           </div>
         </div>
       )}
